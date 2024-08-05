@@ -1,0 +1,18 @@
+.form-product{
+    padding-left: 110px;
+    padding-top: 8px;
+    
+}
+
+.navbar-custom .topbar {
+    background-color: white;
+}
+.wrapper {
+    background-color: white;
+  }
+.footer{
+    background-color: white;
+}
+html[data-topbar-color=light] {
+    background-color: white;
+}
