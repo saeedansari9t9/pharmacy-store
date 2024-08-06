@@ -1,19 +1,5 @@
 <?php
 include("includes/header.php");
-
-// Database configuration
-$host = 'localhost';
-$db   = 'mediluxe';
-$user = 'root';
-$pass = '';
-
-// Establishing a connection to the database using PDO
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Could not connect to the database: " . $e->getMessage());
-}
 ?>
    <!-- Body main wrapper start -->
    <main>
@@ -95,13 +81,21 @@ try {
                               <a href="#"><img src="../admin-portal/assets/images/products-images/<?php echo $AllProducts["image"] ?>" alt=""></a>
                            </div>
                            <div class="product-action-item">
-                              <button type="button" id="modal-add-to-cart" class="product-action-btn" data-id="1" data-name="Product Name" data-price="24.00">
+                           <button type="button" class="add-to-cart-btn" 
+                                    data-id="<?php echo $AllProducts['product_id'] ?>"
+                                    data-name="<?php echo $AllProducts['name'] ?>" 
+                                    data-image="<?php echo $AllProducts['image'] ?>" 
+                                    data-price="<?php echo $AllProducts['price'] ?>" 
+                                    data-quantity="1" 
+                                    data-maxquantity=<?php echo $AllProducts['quantity'] ?>>
+
                                  <svg width="20" height="22" viewBox="0 0 20 22" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                        d="M13.0768 10.1416C13.0768 11.9228 11.648 13.3666 9.88542 13.3666C8.1228 13.3666 6.69401 11.9228 6.69401 10.1416M1.375 5.84163H18.3958M1.375 5.84163V12.2916C1.375 19.1359 2.57494 20.3541 9.88542 20.3541C17.1959 20.3541 18.3958 19.1359 18.3958 12.2916V5.84163M1.375 5.84163L2.91454 2.73011C3.27495 2.00173 4.01165 1.54163 4.81754 1.54163H14.9533C15.7592 1.54163 16.4959 2.00173 16.8563 2.73011L18.3958 5.84163"
                                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                  </svg>
+
                                  <span class="product-tooltip">Add to Cart</span>
                               </button>
 
@@ -223,8 +217,6 @@ try {
 
 
 </div>
-
-
 
 <?php
 include("includes/footer.php");

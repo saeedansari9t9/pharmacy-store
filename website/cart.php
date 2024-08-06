@@ -1,6 +1,5 @@
 <?php
 include("includes/header.php");
-
 ?>
 
 <!-- Body main wrapper start -->
@@ -45,33 +44,59 @@ include("includes/header.php");
                                     <th class="product-remove">Remove</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <?php
-                                if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-                                    foreach ($_SESSION['cart'] as $item) {
-                                        echo "<tr>
-                                            <td class='product-thumbnail'><a href='pharmacy-details.html'><img src='assets/imgs/product/details/details-01.png' alt='img'></a></td>
-                                            <td class='product-name'><a href='pharmacy-details.html'>{$item['name']}</a></td>
-                                            <td class='product-price'><span class='amount'>{$item['price']}</span></td>
-                                            <td class='product-quantity text-center'>
-                                                <div class='product-quantity mt-10 mb-10'>
-                                                    <div class='product-quantity-form'>
-                                                        <form action='#'>
-                                                            <button class='cart-minus'><i class='far fa-minus'></i></button>
-                                                            <input class='cart-input' type='text' value='{$item['quantity']}'>
-                                                            <button class='cart-plus'><i class='far fa-plus'></i></button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class='product-subtotal'><span class='amount'>" . ($item['price'] * $item['quantity']) . "</span></td>
-                                            <td class='product-remove'><a href='remove_from_cart.php?id={$item['id']}'><i class='fa fa-times'></i></a></td>
-                                        </tr>";
-                                    }
-                                } else {
-                                    echo "<tr><td colspan='6' class='text-center'>Your cart is empty.</td></tr>";
-                                }
-                                ?>
+                            <tbody id="cart-items">
+                            <?php
+                            if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+                            foreach ($_SESSION['cart'] as $item) {
+                            ?>
+                            <tr>
+                                <td class='product-thumbnail'>
+                                    <a href='pharmacy-details.html'>
+                                        <img src='../admin-portal/assets/images/products-images/<?php echo $item['image']; ?>' alt='img'>
+                                    </a>
+                                </td>
+                                <td class='product-name'>
+                                    <a href='pharmacy-details.html'>
+                                        <?php echo $item['name']; ?>
+                                    </a>
+                                </td>
+                                <td class='product-price'>
+                                    <span class='amount'>
+                                        <?php echo $item['price']; ?>
+                                    </span>
+                                </td>
+                                <td class='product-quantity text-center'>
+                                    <div class='product-quantity mt-10 mb-10'>
+                                        <div class='product-quantity-form'>
+                                            <form action='#'>
+                                                <button class='cart-minus'>
+                                                    <i class='far fa-minus'></i>
+                                                </button>
+                                                <input class='cart-input' type='text' value='<?php echo $item['quantity']; ?>' data-price='<?php echo $item['price']; ?>' data-item-id="<?php echo $item['id'] ?>" max="<?php echo $item['maxQuantity'] ?>">
+                                                <button class='cart-plus'>
+                                                    <i class='far fa-plus'></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class='product-subtotal'>
+                                    <span class='amount'>
+                                        <?php echo $item['price'] * $item['quantity']; ?>
+                                    </span>
+                                </td>
+                                <td class='product-remove'>
+                                    <button type="button" class="remove-item" data-item-id="<?php echo $item['id'] ?>">
+                                        <i class='fa fa-times'></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <?php
+                            }
+                            } else {
+                                echo "<tr><td colspan='6' class='text-center'>Your cart is empty.</td></tr>";
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>
@@ -79,7 +104,8 @@ include("includes/header.php");
                         <div class="col-12">
                             <div class="coupon-all">
                                 <div class="coupon d-flex align-items-center">
-                                    <input id="coupon_code" class="input-text" name="coupon_code" placeholder="Coupon code" type="text">
+                                    <input id="coupon_code" class="input-text" name="coupon_code"
+                                        placeholder="Coupon code" type="text">
                                     <button onclick="window.location.reload()" class="fill-btn" type="submit">
                                         <span class="fill-btn-inner">
                                             <span class="fill-btn-normal">apply coupon</span>
@@ -111,8 +137,8 @@ include("includes/header.php");
                                         }
                                     }
                                     ?>
-                                    <li>Subtotal <span>$<?php echo number_format($subtotal, 2); ?></span></li>
-                                    <li>Total <span>$<?php echo number_format($subtotal, 2); ?></span></li>
+                                       <li>Subtotal <span id="subtotal">Rs. <?php echo number_format($subtotal, 2); ?></span></li>
+                                       <li>Total <span id="total">Rs. <?php echo number_format($subtotal, 2); ?></span></li>
                                 </ul>
                                 <a class="fill-btn" href="checkout.html">
                                     <span class="fill-btn-inner">

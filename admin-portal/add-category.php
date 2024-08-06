@@ -23,9 +23,6 @@ include("includes/header.php")
                                     <button type="submit" name="add-category" class="btn btn-primary">Submit</button>
                                 </form>
                             </div> <!-- end col -->
-
-                            
-                            
                         </div>
                         <!-- end row-->
                     </div> <!-- end card-body -->

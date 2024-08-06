@@ -88,24 +88,133 @@
 	});
 
 	/*======================================
-	 Cart Quantity Js
+	 Cart Js logic by MK
 	========================================*/
+	$(document).ready(function() {
+		$('.add-to-cart-btn').on('click', function() {
+			var button = $(this);
+			var productId = button.data('id');
+			var productName = button.data('name');
+			var productPrice = button.data('price');
+			var productImage = button.data('image');
+			var productQuantity = button.data('quantity');     
+			var productMaxQuantity = button.data('maxquantity');
+			if (productId) {
+				$.ajax({
+					url: 'php/query.php',
+					method: 'POST',
+					data: {
+						product_id: productId,
+						product_name: productName,
+						product_price: productPrice,
+						product_image: productImage,
+						product_quantity: productQuantity,
+						product_max_quantity: productMaxQuantity
+					},
+					success: function(response) {
+						try {
+							var data = JSON.parse(response);
+							if (data.status === 'success') {
+								alert(data.message);
+							}
+						} catch (e) {
+							alert('Invalid server response.');
+						}
+					},
+					error: function() {
+						alert('An error occurred.');
+					}
+				});
+			}
+		});
+	});
+	
 	$(".cart-minus").click(function () {
-		var $input = $(this).parent().find("input");
-		var count = parseInt($input.val()) - 1;
-		count = count < 1 ? 1 : count;
-		$input.val(count);
-		$input.change();
-		return false;
-	});
+        var $input = $(this).parent().find("input");
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        updateSubtotal($input);
+		updateCartTotals();
+        updateSession($input);
+        return false;
+    });
 
-	$(".cart-plus").click(function () {
-		var $input = $(this).parent().find("input");
-		$input.val(parseInt($input.val()) + 1);
-		$input.change();
-		return false;
-	});
+    $(".cart-plus").click(function () {
+        var $input = $(this).parent().find("input");
+        var count = parseInt($input.val()) + 1;
+        var maxQuantity = parseInt($input.attr('max'));
+        count = count > maxQuantity ? maxQuantity : count;
+        $input.val(count);
+        $input.change();
+        updateSubtotal($input);
+		updateCartTotals();
+        updateSession($input);
+        return false;
+    });
 
+    function updateSubtotal($input) {
+        var quantity = parseInt($input.val());
+        var price = parseFloat($input.data('price'));		
+        var subtotal = quantity * price;
+        $input.closest('tr').find('.product-subtotal .amount').text(subtotal.toFixed(0));
+    }
+
+	function updateCartTotals() {
+        var total = 0;
+        $(".product-subtotal .amount").each(function () {
+            total += parseFloat($(this).text().replace('Rs. ', ''));
+        });
+        $('#subtotal').text('Rs. ' + total.toFixed(2));
+        $('#total').text('Rs. ' + total.toFixed(2));
+    }
+
+	function updateSession($input) {
+        var itemId = $input.attr('data-item-id'); 
+        var quantity = $input.val();
+		$.ajax({
+            url: 'php/query.php',
+            method: 'POST',
+            data: {
+                item_id: itemId,
+                item_quantity: quantity
+            },
+            success: function(response) {
+                var data = JSON.parse(response);
+                if (data.status === 'success') {
+                    console.log(data.message); 
+                } 
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error:', status, error);
+            }
+		});
+    }
+
+	$('.remove-item').click(function () {
+        var itemId = $(this).attr('data-item-id');
+        $.ajax({
+            url: 'php/query.php',
+            method: 'POST',
+            data: {
+                item_id_2: itemId
+            },
+            success: function(response) {
+                var data = JSON.parse(response);
+                if (data.status === 'success') {
+                    $('[data-item-id="' + itemId + '"]').closest('tr').remove();				
+					if (data.isEmpty) {
+                        $('#cart-items').html("<tr><td colspan='6' class='text-center'>Your cart is empty.</td></tr>");
+					}
+                    updateCartTotals(); 
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error:', status, error);
+            }
+        });
+    });
 	/*======================================
 	MagnificPopup image view
 	========================================*/

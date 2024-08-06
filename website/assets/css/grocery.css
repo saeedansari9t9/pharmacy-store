@@ -9307,7 +9307,8 @@ div[class*=col]:last-child .counter-item-2::after {
   visibility: visible;
 }
 
-.product-action-btn {
+.product-action-btn,
+.add-to-cart-btn {
   position: relative;
   display: inline-block;
   width: 42px;
@@ -12725,7 +12726,8 @@ p.checkout-coupon input[type=text]:focus {
 .hey-grocery .product-trending {
   background-color: var(--clr-theme-grocery);
 }
-.hey-grocery .product-action-btn {
+.hey-grocery .product-action-btn,
+.hey-grocery .add-to-cart-btn {
   background-color: var(--clr-theme-grocery);
 }
 .hey-grocery .product-tag span {

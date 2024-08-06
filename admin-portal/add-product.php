@@ -14,7 +14,7 @@ include("includes/header.php")
                     <div class="card-body">
                         <form method="post" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-xs-12 col-md-12 col-lg-6">
                                     <div class="mb-3">
                                         <label for="simpleinput" class="form-label">Product Name</label>
                                         <input type="text" name="name" id="simpleinput" class="form-control" required>
@@ -47,7 +47,7 @@ include("includes/header.php")
                                     </div>
                                 </div> <!-- end col -->
 
-                                <div class="col-lg-6">
+                                <div class="col-xs-12 col-md-12 col-lg-6">
                                     <div class="mb-3">
                                         <label for="simpleinput" class="form-label">Product Description</label>
                                         <input type="text" name="description" id="simpleinput" class="form-control" required>

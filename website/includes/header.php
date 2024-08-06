@@ -1,3 +1,6 @@
+<?php
+include("php/query.php");
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
