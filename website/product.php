@@ -5,7 +5,7 @@ include("includes/header.php");
    <main>
 
       <!-- Breadcrumb area start  -->
-      <div class="breadcrumb__area theme-bg-1 p-relative z-index-11 pt-95 pb-95">
+      <!-- <div class="breadcrumb__area theme-bg-1 p-relative z-index-11 pt-95 pb-95">
          <div class="breadcrumb__thumb" data-background="assets/imgs/bg/breadcrumb-pharmacy.jpg"></div>
          <div class="container">
             <div class="row justify-content-center">
@@ -24,7 +24,7 @@ include("includes/header.php");
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- Breadcrumb area start  -->
 
       <!-- Product area start -->
@@ -81,7 +81,7 @@ include("includes/header.php");
                               <a href="#"><img src="../admin-portal/assets/images/products-images/<?php echo $AllProducts["image"] ?>" alt=""></a>
                            </div>
                            <div class="product-action-item">
-                           <button type="button" data-toggle="modal" data-target="#productAddToCartModal" class="add-to-cart-btn product-action-btn" 
+                           <button type="button" class="add-to-cart-btn" 
                                     data-id="<?php echo $AllProducts['product_id'] ?>"
                                     data-name="<?php echo $AllProducts['name'] ?>" 
                                     data-image="<?php echo $AllProducts['image'] ?>" 

@@ -5,25 +5,10 @@ include("includes/header.php");
 <!-- Body main wrapper start -->
 <main>
     <!-- Breadcrumb area start  -->
-    <div class="breadcrumb__area theme-bg-1 p-relative z-index-11 pt-95 pb-95">
-        <div class="breadcrumb__thumb" data-background="assets/imgs/bg/breadcrumb-pharmacy.jpg"></div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xxl-12">
-                    <div class="breadcrumb__wrapper text-center">
-                        <h2 class="breadcrumb__title">Cart</h2>
-                        <div class="breadcrumb__menu">
-                            <nav>
-                                <ul>
-                                    <li><span><a href="index.html">Home</a></span></li>
-                                    <li><span>Cart</span></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="head-cart">
+        <h2>
+            SHOPPING CART
+        </h2>
     </div>
     <!-- Breadcrumb area start  -->
 
@@ -87,7 +72,7 @@ include("includes/header.php");
                                 </td>
                                 <td class='product-remove'>
                                     <button type="button" class="remove-item" data-item-id="<?php echo $item['id'] ?>">
-                                        <i class='fa fa-times'></i>
+                                    <i class="fa-solid fa-trash" style="color: #d60000;"></i>
                                     </button>
                                 </td>
                             </tr>
@@ -100,19 +85,9 @@ include("includes/header.php");
                             </tbody>
                         </table>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-12">
                             <div class="coupon-all">
-                                <div class="coupon d-flex align-items-center">
-                                    <input id="coupon_code" class="input-text" name="coupon_code"
-                                        placeholder="Coupon code" type="text">
-                                    <button onclick="window.location.reload()" class="fill-btn" type="submit">
-                                        <span class="fill-btn-inner">
-                                            <span class="fill-btn-normal">apply coupon</span>
-                                            <span class="fill-btn-hover">apply coupon</span>
-                                        </span>
-                                    </button>
-                                </div>
                                 <div class="coupon2">
                                     <button onclick="window.location.reload()" class="fill-btn" type="submit">
                                         <span class="fill-btn-inner">
@@ -123,7 +98,7 @@ include("includes/header.php");
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-lg-6 ml-auto">
                             <div class="cart-page-total">
@@ -146,6 +121,18 @@ include("includes/header.php");
                                         <span class="fill-btn-hover">Proceed to checkout</span>
                                     </span>
                                 </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 ml-auto">
+                            <div class="coupon-all">
+                                <div class="coupon2">
+                                    <button onclick="window.location.reload()" class="fill-btn" type="submit">
+                                        <span class="fill-btn-inner">
+                                            <span class="fill-btn-normal">Update cart</span>
+                                            <span class="fill-btn-hover">Update cart</span>
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

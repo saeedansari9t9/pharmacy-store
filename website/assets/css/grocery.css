@@ -1745,8 +1745,8 @@ i[class^=flaticon-] {
 /*  SPACE CSS START
 /*----------------------------------------*/
 .section-space {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .section-space {
@@ -10977,8 +10977,12 @@ div[class*=col]:last-child .counter-item-2::after {
     margin-top: 15px;
   }
 }
+.head-cart h2{
+  text-align: center;
+
+}
 .cart-area .cart-page-total {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 .cart-area .cart-page-total > h2 {
   font-size: 20px;
