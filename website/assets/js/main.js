@@ -91,41 +91,51 @@
 	 Cart Js logic by MK
 	========================================*/
 	$(document).ready(function() {
-		$('.add-to-cart-btn').on('click', function() {
-			var button = $(this);
-			var productId = button.data('id');
-			var productName = button.data('name');
-			var productPrice = button.data('price');
-			var productImage = button.data('image');
-			var productQuantity = button.data('quantity');     
-			var productMaxQuantity = button.data('maxquantity');
-			if (productId) {
-				$.ajax({
-					url: 'php/query.php',
-					method: 'POST',
-					data: {
-						product_id: productId,
-						product_name: productName,
-						product_price: productPrice,
-						product_image: productImage,
-						product_quantity: productQuantity,
-						product_max_quantity: productMaxQuantity
-					},
-					success: function(response) {
-						try {
-							var data = JSON.parse(response);
-							if (data.status === 'success') {
-								alert(data.message);
+		$('.add-to-cart-btn').each(function() {
+			$(this).click(()=> {
+				var button = $(this);
+				var productId = button.data('id');
+				var productName = button.data('name');
+				var productPrice = button.data('price');
+				var productImage = button.data('image');
+				var productQuantity = button.data('quantity');     
+				var productMaxQuantity = button.data('maxquantity');
+				document.getElementById('modal-product-name-cart').textContent = productName;
+				document.getElementById('modal-product-image-cart').src = "../admin-portal/assets/images/products-images/" + productImage;
+				document.getElementById('modal-product-price-cart').textContent = productPrice;
+				if (productId) {
+					$.ajax({
+						url: 'php/query.php',
+						method: 'POST',
+						data: {
+							product_id: productId,
+							product_name: productName,
+							product_price: productPrice,
+							product_image: productImage,
+							product_quantity: productQuantity,
+							product_max_quantity: productMaxQuantity
+						},
+						success: function(response) {
+							try {
+								var data = JSON.parse(response);
+								if (data.status === 'success') {
+									setTimeout(() => {
+										var value = document.getElementById('productAddToCartModal');
+										if (value) {
+											value.classList('show').remove();
+										}
+									}, 1000);
+								}
+							} catch (e) {
+								alert('Invalid server response.');
 							}
-						} catch (e) {
-							alert('Invalid server response.');
+						},
+						error: function() {
+							alert('An error occurred.');
 						}
-					},
-					error: function() {
-						alert('An error occurred.');
-					}
-				});
-			}
+					});
+				}
+			});
 		});
 	});
 	

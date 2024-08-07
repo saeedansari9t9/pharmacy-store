@@ -9211,13 +9211,6 @@ div[class*=col]:last-child .counter-item-2::after {
   padding: 6px 8px 4px;
   text-transform: capitalize;
 }
-
-.product-thumb {
-  /* padding: 80px 60px 40px; */
-  overflow: hidden;
-  max-width: 370px;
-  margin: auto;
-}
 @media only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 1200px) and (max-width: 1399px) {
   .product-thumb {
     /* padding: 80px 30px 40px; */
@@ -9245,12 +9238,15 @@ div[class*=col]:last-child .counter-item-2::after {
   font-size: 20px;
   margin-bottom: 5px;
   text-transform: capitalize;
-
   display: block;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.modal.cart .product-title {
+  font-size: 15px;
 }
 @media (max-width:450px), only screen and (min-width: 768px) and (max-width: 991px) {
   .product-title {
@@ -9260,15 +9256,13 @@ div[class*=col]:last-child .counter-item-2::after {
 .product-title a:hover {
   color: var(--clr-theme-secondary);
 }
-
-.product-content {
-  padding: 25px 20px;
-  border-top: 1px solid var(--clr-border-2);
-  margin-top: 20px;
-  position: relative;
-}
 .product-content-modal {
+  width: 70%;
+}
+
+.modal.cart .product-content-modal {
   border: none;
+  width: 60%;
 }
 .atc-btn .add-to-cart {
   display: inline-block;
@@ -9279,9 +9273,12 @@ div[class*=col]:last-child .counter-item-2::after {
   border-radius: 5px;
   margin-top: 10px;
 } 
-.product-thumb-img{
+.product-thumb-img {
   border: 1px solid var(--clr-border-2);
-    /* position: relative; */
+  width: 30%;
+}
+.modal.cart .product-thumb-img {
+  width: 40% !important;
 }
 .product-tag span {
   font-size: 14px;
@@ -13439,10 +13436,10 @@ p.checkout-coupon input[type=text]:focus {
   }
 }
 
-
-
-
-.modal-product{
+.modal-product {
   display: flex;
   border: none;
+  gap: 3rem;
+  align-items: center;
+  padding: 3rem;
 }
