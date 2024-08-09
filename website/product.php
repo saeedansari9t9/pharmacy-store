@@ -81,7 +81,7 @@ include("includes/header.php");
                               <a href="#"><img src="../admin-portal/assets/images/products-images/<?php echo $AllProducts["image"] ?>" alt=""></a>
                            </div>
                            <div class="product-action-item">
-                           <button type="button" class="add-to-cart-btn" 
+                           <button type="button" data-toggle="modal" data-target="#productAddToCartModal" class="add-to-cart-btn product-action-btn" 
                                     data-id="<?php echo $AllProducts['product_id'] ?>"
                                     data-name="<?php echo $AllProducts['name'] ?>" 
                                     data-image="<?php echo $AllProducts['image'] ?>" 
