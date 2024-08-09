@@ -5374,16 +5374,6 @@ fieldset:disabled .btn {
 }
 .modal.show .modal-dialog {
 	transform: none;
-	width: 80rem !important;
-}
-.modal.cart .modal-dialog {
-	width: 35rem !important;
-	
-}
-.modal.show {
-	display: flex !important;
-	justify-content: center;
-	align-items: center;
 }
 .modal.modal-static .modal-dialog {
 	transform: scale(1.02);
@@ -5415,7 +5405,6 @@ fieldset:disabled .btn {
 	border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
 	border-radius: var(--bs-modal-border-radius);
 	outline: 0;
-	/* transform: translate(-50%, -50%); */
 }
 .modal-backdrop {
 	--bs-backdrop-zindex: 1050;

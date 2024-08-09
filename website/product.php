@@ -81,7 +81,7 @@ include("includes/header.php");
                               <a href="#"><img src="../admin-portal/assets/images/products-images/<?php echo $AllProducts["image"] ?>" alt=""></a>
                            </div>
                            <div class="product-action-item">
-                           <button type="button" data-toggle="modal" data-target="#productAddToCartModal" class="add-to-cart-btn product-action-btn" 
+                           <button type="button" class="add-to-cart-btn" 
                                     data-id="<?php echo $AllProducts['product_id'] ?>"
                                     data-name="<?php echo $AllProducts['name'] ?>" 
                                     data-image="<?php echo $AllProducts['image'] ?>" 
@@ -101,9 +101,8 @@ include("includes/header.php");
 
                               <button type="button" class="product-action-btn" data-toggle="modal" data-target="#productQuickViewModal" 
                                     data-name="<?php echo $AllProducts['name'] ?>" 
-                                    data-image="<?php echo $AllProducts['image'] ?>"
-                                    data-actual-price="<?php echo $AllProducts['price'] ?>" 
-                                    data-price="<?php echo $AllProducts['price'] - 10 ?>" 
+                                    data-image="<?php echo $AllProducts['image'] ?>" 
+                                    data-price="<?php echo $AllProducts['price'] ?>" 
                                     data-category="<?php echo $AllProducts['category_name'] ?>" 
                                     data-description="<?php echo $AllProducts['description'] ?>">
                                  
@@ -127,14 +126,14 @@ include("includes/header.php");
                                  <span class="product-tooltip">Add To Wishlist</span>
                               </button>
                            </div>
-                           <div class="product-content p-4">
+                           <div class="product-content">
                               <div class="product-tag">
                                  <span><?php echo $AllProducts["category_name"] ?></span>
                               </div>
                               <h4 class="product-title"><a href="pharmacy-details.html"><?php echo $AllProducts["name"] ?></a></h4>
                               <div class="product-price">
-                                 <span class="product-old-price"><del>Rs. <?php echo $AllProducts['price'] ?></del></span>
-                                 <span class="product-new-price"><?php echo $AllProducts["price"] - 10 ?> </span>
+                                 <span class="product-old-price"><del>Rs.120</del></span>
+                                 <span class="product-new-price"><?php echo $AllProducts["price"] ?> </span>
                               </div>
                            </div>
                         </div>
@@ -173,7 +172,7 @@ include("includes/header.php");
 
 
 
-    <!-- Modal Quick Viw -->
+    <!-- Modal -->
     <div class="modal fade" id="productQuickViewModal" tabindex="-1" role="dialog" aria-labelledby="productQuickViewModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -187,34 +186,28 @@ include("includes/header.php");
                     <!-- Modal content will be loaded dynamically -->
                     <div class="product-item modal-product">
                         <div class="product-thumb product-thumb-img">
-                        <a href="#"><img id="modal-product-image" src="" alt=""></a>
+                        <a href="#"><img id="modal-product-image" src="../admin-portal/assets/images/products-images/<?php echo $AllProducts["image"] ?>" alt=""></a>
                             <!-- <a href="#"><img id="modal-product-image" src="" alt=""></a> -->
                         </div>
                         <div class="product-content product-content-modal">
-                            <h4 class="product-title" id="modal-product-name"></h4>
+                            <h4 class="product-title" id="modal-product-name"><?php echo $AllProducts["name"] ?></h4>
                             <!-- <h4 class="product-title" id="modal-product-name"></h4> -->
                             <div class="product-tag">
-                              <span id="modal-product-category"></span>
+                              <span id="modal-product-category"><?php echo $AllProducts["category_name"] ?></span>
                               <!-- <span ></span> -->
                             </div>
                             <div class="product-description">
-                              <span class="" id="modal-product-description"> </span>
+                              <span class="" id="modal-product-description"><?php echo $AllProducts["description"] ?> </span>
                                 <!-- <span class="" id="modal-product-description"></span> -->
                             </div>
                             <div class="product-price">
-                                <span class="product-old-price" ><del id="modal-product-actual-price"></del></span>
-                                <span class="product-new-price" id="modal-product-price"> </span>
+                                <span class="product-old-price"><del>Rs.120</del></span>
+                                <span class="product-new-price" id="modal-product-price"><?php echo $AllProducts["price"] ?> </span>
                                 <!-- <span class="product-new-price" id="modal-product-price"></span> -->
                             </div>
-                            <button class="add-to-cart-btn w-100 rounded-0 mt-2 text-white" 
-                                    data-id="<?php echo $AllProducts['product_id'] ?>"
-                                    data-name="<?php echo $AllProducts['name'] ?>" 
-                                    data-image="<?php echo $AllProducts['image'] ?>" 
-                                    data-price="<?php echo $AllProducts['price'] ?>" 
-                                    data-quantity="1" 
-                                    data-maxquantity=<?php echo $AllProducts['quantity'] ?>>
-                                 Add to Cart
-                              </button>
+                            <div class="atc-btn">
+                                <a href="#" class="add-to-cart">Add to Cart</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -222,29 +215,6 @@ include("includes/header.php");
         </div>
     </div>
 
-   <!-- Modal Add To Cart -->
-   <div class="modal fade cart" id="productAddToCartModal" tabindex="-1" role="dialog" aria-labelledby="productAddToCartModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <!-- Modal content will be loaded dynamically -->
-                    <div class="product-item modal-product">
-                        <div class="product-thumb product-thumb-img">
-                        <a href="#"><img id="modal-product-image-cart" src="" alt=""></a>
-                            <!-- <a href="#"><img id="modal-product-image" src="" alt=""></a> -->
-                        </div>
-                        <div class="product-content product-content-modal">
-                            <h4 class="product-title" id="modal-product-name-cart"></h4>                 
-                            <div class="product-price">
-                                <span class="product-new-price" id="modal-product-price-cart"> </span>
-                                <!-- <span class="product-new-price" id="modal-product-price"></span> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 
