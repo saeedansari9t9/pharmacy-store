@@ -57,7 +57,7 @@ include("includes/header.php");
                                                 <button class='cart-minus'>
                                                     <i class='far fa-minus'></i>
                                                 </button>
-                                                <input class='cart-input' type='text' value='<?php echo $item['quantity']; ?>' data-price='<?php echo $item['price']; ?>' data-item-id="<?php echo $item['id'] ?>" max="<?php echo $item['maxQuantity'] ?>">
+                                                <input class='cart-input' type='text' value='<?php echo $item['quantity']; ?>' data-price='<?php echo $item['price']; ?>' data-item-id='<?php echo $item['id'] ?>' max='<?php echo $item['maxQuantity'] ?>'>
                                                 <button class='cart-plus'>
                                                     <i class='far fa-plus'></i>
                                                 </button>
@@ -72,7 +72,7 @@ include("includes/header.php");
                                 </td>
                                 <td class='product-remove'>
                                     <button type="button" class="remove-item" data-item-id="<?php echo $item['id'] ?>">
-                                    <i class="fa-solid fa-trash" style="color: #d60000;"></i>
+                                    <i class="fa-solid fa-trash" style="color: #f00000;"></i>
                                     </button>
                                 </td>
                             </tr>
@@ -115,7 +115,7 @@ include("includes/header.php");
                                        <li>Subtotal <span id="subtotal">Rs. <?php echo number_format($subtotal, 2); ?></span></li>
                                        <li>Total <span id="total">Rs. <?php echo number_format($subtotal, 2); ?></span></li>
                                 </ul>
-                                <a class="fill-btn" href="checkout.html">
+                                <a class="fill-btn" href="checkout.php">
                                     <span class="fill-btn-inner">
                                         <span class="fill-btn-normal">Proceed to checkout</span>
                                         <span class="fill-btn-hover">Proceed to checkout</span>

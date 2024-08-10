@@ -71,7 +71,7 @@ include("includes/header.php");
                   $row = $query->fetchAll(PDO::FETCH_ASSOC);
                   foreach($row as $AllProducts){
                      ?>
-                     <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                     <div class="col-xxl-3 col-xl-3 mt-4 col-lg-4 col-md-6 col-sm-6">
                         <div class="product-item">
                            <div class="product-badge">
                               <span class="product-trending">10% off</span>

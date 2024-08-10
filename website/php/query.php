@@ -98,4 +98,11 @@ if (isset($_POST['item_id_2'])) {
         } 
     }
 }
+
+// Count Cart
+$count = 0;
+
+if(isset($_SESSION['cart'])){
+    $count = count($_SESSION['cart']);
+}
 ?>

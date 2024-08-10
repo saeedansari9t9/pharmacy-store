@@ -28,6 +28,9 @@ include("php/query.php");
 </head>
 
 <body class="hey-grocery">
+   <?php
+   
+   ?>
 
 <!-- preloader start -->
    <!-- <div id="preloader">
@@ -174,10 +177,10 @@ include("php/query.php");
                               stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                      </span>
-                     <a href="tel:+380961381876">+380961381876</a>
+                     <a href="tel:+923472310655">+923472310655</a>
                   </div>
                   <div class="header-top-notice d-none d-lg-block">
-                     <p>TAKE CARE OF YOUR Health <span class="grocery-clr">25% OFF</span> USE CODE “ DOFIX03 ”</p>
+                     <p>TAKE CARE OF YOUR Health <span class="grocery-clr">25% OFF</span> </p>
                   </div>
                   <div class="tp-header-top-menu d-flex align-items-center justify-content-end">
                      <!-- <div class="header-lang-item header-lang">
@@ -229,6 +232,9 @@ include("php/query.php");
                            </li>
                         </ul>
                      </div>
+                     <div>
+                        <img src="assets/imgs/icons/user2.png" class="" alt="" width="20px" height="20px">
+                     </div>
                   </div>
                </div>
             </div>
@@ -279,25 +285,30 @@ include("php/query.php");
                      </div>
                      <div class="header-right d-inline-flex align-items-center justify-content-end">
                         <div class="header-search d-xxl-block">
-                           <form action="#">
+                           <form action="#" method="post">
                               <input type="text" id="live_search" placeholder="Search...">
-                              <div id="search-result" style="display:none;"></div>
+                              <div id="" style="display:none;"></div>
                               <button class="grocery-bg" type="submit">
                               <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
                               </button>
                            </form>
+                           <div>
+                              <div class="list-group" id="search-result">
+                                 <a href="#" class="list-group-item list-group-item-action d-none border-1"></a>
+                              </div>
+                           </div>
                         </div>
                         <div class="header-action d-flex align-items-center ml-30">
                            <div class="header-action-item">
                               <a href="wishlist.php" class="header-action-btn">
-                              <i class="fa-regular fa-heart fa-lg"></i>
+                              <i class="fa-solid fa-heart fa-lg"></i>
                                  <span class="header-action-badge grocery-bg">3</span>
                               </a>
                            </div>
                            <div class="header-action-item">
                               <a href="cart.php" class="header-action-btn cartmini-open-btn">
                               <i class="fa-solid fa-cart-shopping fa-lg"></i>
-                                 <span class="header-action-badge grocery-bg">12</span>
+                                 <span class="header-action-badge grocery-bg"><?php echo $count ?></span>
                               </a>
                            </div>
                            

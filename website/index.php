@@ -551,7 +551,7 @@ include("includes/header.php");
       <!-- seller area end -->
 
       <!-- Vaccine area start -->
-      <div class="vaccine-area theme-bg-1 section-space">
+      <!-- <div class="vaccine-area theme-bg-1 section-space">
          <div class="container">
             <div class="row gy-50 align-items-center">
                <div class="col-xxl-6 col-xl-6 col-lg-6">
@@ -588,11 +588,11 @@ include("includes/header.php");
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- Vaccine area end -->
 
       <!-- Best seller area start -->
-      <section class="best-seller-area section-space">
+      <!-- <section class="best-seller-area section-space">
          <div class="container">
             <div class="row gy-50">
                <div class="col-xxl-6 col-xl-6 col-lg-6">
@@ -831,7 +831,7 @@ include("includes/header.php");
                </div>
             </div>
          </div>
-      </section>
+      </section> -->
       <!-- Best seller area end -->
 
       <!-- Review area start -->
@@ -855,7 +855,6 @@ include("includes/header.php");
                                        consectetur, ultrices mauris. Maecenas.</p>
                                  </div>
                                  <div class="review-meta">
-                                    <!-- If we need navigation buttons -->
                                     <div class="review-navigation">
                                        <button class="review-button-prev"><i
                                              class="fa-regular fa-arrow-left"></i></button>
@@ -880,7 +879,6 @@ include("includes/header.php");
                                        consectetur, ultrices mauris. Maecenas.</p>
                                  </div>
                                  <div class="review-meta">
-                                    <!-- If we need navigation buttons -->
                                     <div class="review-navigation">
                                        <button class="review-button-prev"><i
                                              class="fa-regular fa-arrow-left"></i></button>
@@ -905,7 +903,6 @@ include("includes/header.php");
                                        consectetur, ultrices mauris. Maecenas.</p>
                                  </div>
                                  <div class="review-meta">
-                                    <!-- If we need navigation buttons -->
                                     <div class="review-navigation">
                                        <button class="review-button-prev"><i
                                              class="fa-regular fa-arrow-left"></i></button>
@@ -954,7 +951,7 @@ include("includes/header.php");
       <!-- Important area end -->
 
       <!-- Latest product area start -->
-      <div class="section latest-product-area section-space">
+      <!-- <div class="section latest-product-area section-space">
          <div class="container">
             <div class="row">
                <div class="col-xxl6">
@@ -1202,7 +1199,7 @@ include("includes/header.php");
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- Latest product area end -->
 
       <!-- Blog area start -->

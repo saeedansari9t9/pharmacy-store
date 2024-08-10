@@ -17,13 +17,13 @@ if(isset($_POST["input"])){
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             $id = $row["product_id"];
             $name = $row["name"];
-            echo "<p>$name</p>"; // Display the product name
+            echo "<a href='#' class='list-group-item list-group-item-action border-1'>$name</a>"; // Display the product name
         }
     } else {
-        echo "<h6 class='text-danger text-center mt-3'>No Data Found</h6>";
+        echo "<h6 class='text-danger list-group-item border-1 text-center mt-3'>No Data Found</h6>";
     }
 } else {
-    echo "<h6 class='text-danger text-center mt-3'>No Data Found</h6>";
+    echo "<h6 class='text-danger list-group-item border-1 text-center mt-3'>No Data Found</h6>";
 }
 
 ?>

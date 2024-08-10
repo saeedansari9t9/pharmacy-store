@@ -2978,7 +2978,7 @@ PAGINATION CSS START
 }
 .header-top-area .header-lang-item:not(:last-child) {
   padding-right: 15px;
-  margin-right: 17px;
+  /* margin-right: 2px; */
 }
 .header-top-area .header-lang-item > span {
   padding-left: 0;
@@ -3355,7 +3355,7 @@ PAGINATION CSS START
 }
 
 .header-layout-4 {
-  padding: 0 65px;
+  padding: 0 35px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-layout-4 {
