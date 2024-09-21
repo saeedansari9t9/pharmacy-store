@@ -33,12 +33,11 @@ include("includes/header.php");
             <div class="row">
                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                   <div class="bd-product__result mb-30">
-                     <h4>20 Item On List</h4>
+                     <h3>20 Item On List</h3>
                   </div>
                </div>
                <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-6">
-                  <div
-                     class="product__filter-wrapper d-flex flex-wrap gap-3 align-items-center justify-content-md-end mb-30">
+                  <div class="product__filter-wrapper d-flex flex-wrap gap-3 align-items-center justify-content-md-end mb-30">
                      <div class="bd-product__filter-btn">
                         <button type="button"><i class="fa-solid fa-list"></i> Filter</button>
                      </div>
@@ -83,7 +82,7 @@ include("includes/header.php");
                            <div class="product-action-item">
                            <button type="button" class="add-to-cart-btn" 
                                     data-id="<?php echo $AllProducts['product_id'] ?>"
-                                    data-name="<?php echo $AllProducts['name'] ?>" 
+                                    data-name="<?php echo $AllProducts['product_name'] ?>" 
                                     data-image="<?php echo $AllProducts['image'] ?>" 
                                     data-price="<?php echo $AllProducts['price'] ?>" 
                                     data-quantity="1" 
@@ -100,7 +99,7 @@ include("includes/header.php");
                               </button>
 
                               <button type="button" class="product-action-btn" data-toggle="modal" data-target="#productQuickViewModal" 
-                                    data-name="<?php echo $AllProducts['name'] ?>" 
+                                    data-name="<?php echo $AllProducts['product_name'] ?>" 
                                     data-image="<?php echo $AllProducts['image'] ?>" 
                                     data-price="<?php echo $AllProducts['price'] ?>" 
                                     data-category="<?php echo $AllProducts['category_name'] ?>" 
@@ -115,7 +114,7 @@ include("includes/header.php");
                                  <span class="product-tooltip">Quick View</span>
                               </button>
                               
-                              <button type="button" class="product-action-btn">
+                              <!-- <button type="button" class="product-action-btn">
 
                                  <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -124,16 +123,16 @@ include("includes/header.php");
                                        fill="white" />
                                  </svg>
                                  <span class="product-tooltip">Add To Wishlist</span>
-                              </button>
+                              </button> -->
                            </div>
                            <div class="product-content">
                               <div class="product-tag">
                                  <span><?php echo $AllProducts["category_name"] ?></span>
                               </div>
-                              <h4 class="product-title"><a href="pharmacy-details.html"><?php echo $AllProducts["name"] ?></a></h4>
+                              <h4 class="product-title"><a href="pharmacy-details.html"><?php echo $AllProducts["product_name"] ?></a></h4>
                               <div class="product-price">
                                  <span class="product-old-price"><del>Rs.120</del></span>
-                                 <span class="product-new-price"><?php echo $AllProducts["price"] ?> </span>
+                                 <span class="product-new-price">Rs&nbsp;<?php echo $AllProducts["price"] ?> </span>
                               </div>
                            </div>
                         </div>
@@ -190,7 +189,7 @@ include("includes/header.php");
                             <!-- <a href="#"><img id="modal-product-image" src="" alt=""></a> -->
                         </div>
                         <div class="product-content product-content-modal">
-                            <h4 class="product-title" id="modal-product-name"><?php echo $AllProducts["name"] ?></h4>
+                            <h4 class="product-title" id="modal-product-name"><?php echo $AllProducts["product_name"] ?></h4>
                             <!-- <h4 class="product-title" id="modal-product-name"></h4> -->
                             <div class="product-tag">
                               <span id="modal-product-category"><?php echo $AllProducts["category_name"] ?></span>
@@ -206,7 +205,14 @@ include("includes/header.php");
                                 <!-- <span class="product-new-price" id="modal-product-price"></span> -->
                             </div>
                             <div class="atc-btn">
-                                <a href="#" class="add-to-cart">Add to Cart</a>
+                                <!-- <a href="#" class="add-to-cart">Add to Cart</a> -->
+                                <button type="button" class="add-to-cart-btn"
+                                    data-id="<?php echo $AllProducts['product_id'] ?>"
+                                    data-name="<?php echo $AllProducts['product_name'] ?>" 
+                                    data-image="<?php echo $AllProducts['image'] ?>" 
+                                    data-price="<?php echo $AllProducts['price'] ?>" 
+                                    data-quantity="1" 
+                                    data-maxquantity=<?php echo $AllProducts['quantity'] ?>>Add</button>
                             </div>
                         </div>
                     </div>

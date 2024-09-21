@@ -342,7 +342,11 @@ include("php/query-admin.php")
                         <img src="assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
                     </span>
                     <span class="d-lg-block d-none">
-                        <h5 class="my-0 fw-normal">Adams<i class="ri-arrow-down-s-line fs-22 d-none d-sm-inline-block align-middle"></i></h5>
+                    <h5 class="my-0 fw-normal">
+    <?php echo htmlspecialchars($_SESSION["AdminUsername"]) ?>
+    <i class="ri-arrow-down-s-line fs-22 d-none d-sm-inline-block align-middle"></i>
+</h5>
+
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
@@ -376,7 +380,7 @@ include("php/query-admin.php")
                     </a>
 
                     <!-- item-->
-                    <a href="auth-logout.html" class="dropdown-item">
+                    <a href="logout.php" class="dropdown-item">
                         <i class="ri-logout-circle-r-line align-middle me-1"></i>
                         <span>Logout</span>
                     </a>
@@ -423,29 +427,29 @@ include("php/query-admin.php")
 		                </a>
 		            </li>
                     <li class="side-nav-item">
-		                <a href="profile.php" class="side-nav-link">
+		                <a href="view-users.php" class="side-nav-link">
                             <i class="ri-account-circle-line"></i>
-		                    <span> Profile </span>  
+		                    <span> Users </span>  
 		                </a>
 		            </li>
                     <li class="side-nav-item">
-		                <a href="add-product.php" class="side-nav-link">
+		                <a href="view-orders.php" class="side-nav-link">
                             <i class="ri-account-circle-line"></i>
-		                    <span> Add Product </span>  
+		                    <span> Orders </span>  
 		                </a>
 		            </li>
-                    <li class="side-nav-item">
+                    <!-- <li class="side-nav-item">
 		                <a href="add-category.php" class="side-nav-link">
                             <i class="ri-account-circle-line"></i>
 		                    <span> Add Category </span>  
 		                </a>
-		            </li>
-                    <li class="side-nav-item">
+		            </li> -->
+                    <!-- <li class="side-nav-item">
 		                <a href="add-company.php" class="side-nav-link">
                             <i class="ri-account-circle-line"></i>
 		                    <span> Add Company </span>  
 		                </a>
-		            </li>
+		            </li> -->
 
                     <li class="side-nav-item">
 		                <a data-bs-toggle="collapse" href="#sidebarIcons" aria-expanded="false" aria-controls="sidebarIcons" class="side-nav-link">
@@ -463,14 +467,33 @@ include("php/query-admin.php")
 		                            <a class="side-nav-link" href="view-product.php">View Products</a>
 		                        </li>
 		                        <li class="side-nav-item">
-		                            <a class="side-nav-link" href="edit-product.php">Edit Products</a>
+		                            <a class="side-nav-link" href="add-category.php">Add Products Category </a>
 		                        </li>
-		                        <!-- <li class="side-nav-item">
-		                            <a class="side-nav-link" href="icons-mdi.html">Delete</a>
-		                        </li> -->
+		                        <li class="side-nav-item">
+		                            <a class="side-nav-link" href="view-category.php">View Products Category </a>
+		                        </li>
 		                    </ul>
 		                </div>
 		            </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarMaps" aria-expanded="false" aria-controls="sidebarMaps" class="side-nav-link collapsed">
+                            <i class="ri-map-pin-line"></i>
+                            <span> Add Company </span>
+                            <span class="menu-arrow"></span>
+
+                        </a>
+                        <div class="collapse" id="sidebarMaps" style="">
+                            <ul class="side-nav-second-level">
+                                <li class="side-nav-item">
+                                    <a class="side-nav-link" href="add-company.php">Add Company</a>
+                                </li>
+                                <li class="side-nav-item">
+                                    <a class="side-nav-link" href="view-company.php">View Company</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
 
 		            <li class="side-nav-item">
@@ -483,17 +506,17 @@ include("php/query-admin.php")
 		                <div class="collapse" id="sidebarPagesAuth">
 		                    <ul class="side-nav-second-level">
 		                        <li class="side-nav-item">
-		                            <a class="side-nav-link" href="auth-login.html">Login</a>
+		                            <a class="side-nav-link" href="login.php">Login</a>
 		                        </li>
 		                        <li class="side-nav-item">
-		                            <a class="side-nav-link" href="auth-register.html">Register</a>
+		                            <a class="side-nav-link" href="register.php">Register</a>
 		                        </li>
 		                        <li class="side-nav-item">
-		                            <a class="side-nav-link" href="auth-logout.html">Logout</a>
+		                            <a class="side-nav-link" href="logout.php">Logout</a>
 		                        </li>
-		                        <li class="side-nav-item">
+		                        <!-- <li class="side-nav-item">
 		                            <a class="side-nav-link" href="auth-forgotpw.html">Forgot Password</a>
-		                        </li>
+		                        </li> -->
 
 		                    </ul>
 		                </div>

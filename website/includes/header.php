@@ -108,9 +108,15 @@ include("php/query.php");
                </div>
                <div class="offcanvas__search mb-25">
                   <form action="#">
-                     <input type="text" placeholder="What are you searching for?">
+                     <input type="text" id="live_search1" placeholder="What are you searching for?">
                      <button type="submit"><i class="far fa-search"></i></button>
                   </form>
+                  <div>
+                     <div class="list-group" id="search-result1">
+                        <a href="#" class="list-group-item list-group-item-action d-none border-1"></a>
+                     </div>
+                  </div>
+                  
                </div>
                <div class="mobile-menu fix mb-40"></div>
                <div class="offcanvas__contact mt-30 mb-20">
@@ -222,18 +228,30 @@ include("php/query.php");
                            </li>
                            
                            <li>
-                              <a class="grocery-clr-hover" href="wishlist.php">Wishlist</a>
+                              <a class="grocery-clr-hover" href="orders.php">My Orders</a>
                            </li>
                            <li>
                               <a class="grocery-clr-hover" href="cart.php">Cart</a>
                            </li>
                            <li>
-                              <a class="grocery-clr-hover" href="#">Logout</a>
+                              <a class="grocery-clr-hover" href="logout.php">Logout</a>
                            </li>
                         </ul>
                      </div>
                      <div>
-                        <img src="assets/imgs/icons/user2.png" class="" alt="" width="20px" height="20px">
+                        <a href="login.php"><img src="assets/imgs/icons/user2.png" class="" alt="" width="20px" height="20px"></a>
+                        
+                     </div>
+                     <div>
+                     <h6 class="text-light ms-3 mt-2">
+                        <?php
+                        if (isset($_SESSION["UserName"])) {
+                           echo $_SESSION["UserName"];
+                        } else {
+                           echo '<a href="login.php" class="btn btn-light">Login</a>';
+                        }
+                        ?>
+                     </h6>
                      </div>
                   </div>
                </div>
@@ -245,7 +263,7 @@ include("php/query.php");
                   <div class="header-main-4">
                      <div class="header-left">
                         <div class="header-logo">
-                           <a href="grocery.php">
+                           <a href="index.php">
                               <img src="assets/imgs/logo/3.png" alt="logo not found">
                                <!-- <h3>MEDILUXE</h3> -->
                            </a>
@@ -266,8 +284,8 @@ include("php/query.php");
                                        <a href="product.php">Shop</a>
                                        <ul class="submenu">
                                           <li><a href="product.php">Product</a></li>
-                                          <li><a href="details.php">Product Details</a></li>
-                                          <li><a href="wishlist.php">Wishlist</a></li>
+                                          <!-- <li><a href="details.php">Product Details</a></li> -->
+                                          <li><a href="orders.php">My Orders</a></li>
                                           <li><a href="cart.php">Cart</a></li>
                                           <li><a href="checkout.php">Checkout</a></li>
                                        </ul>
@@ -287,24 +305,50 @@ include("php/query.php");
                         <div class="header-search d-xxl-block">
                            <form action="#" method="post">
                               <input type="text" id="live_search" placeholder="Search...">
-                              <div id="" style="display:none;"></div>
                               <button class="grocery-bg" type="submit">
                               <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
                               </button>
                            </form>
                            <div>
-                              <div class="list-group" id="search-result">
-                                 <a href="#" class="list-group-item list-group-item-action d-none border-1"></a>
-                              </div>
-                           </div>
+                     <div class="list-group" id="search-result">
+                        <a href="#" class="list-group-item list-group-item-action d-none border-1"></a>
+                     </div>
+                  </div>
                         </div>
                         <div class="header-action d-flex align-items-center ml-30">
-                           <div class="header-action-item">
+                           <!-- <div class="header-action-item">
+                              <a href="orders.php" class="header-action-btn">
+                              <i class="fa-solid fa-bell fa-lg"></i>
+                                 <span class="header-action-badge grocery-bg"><?php echo $totalAppointmentsRequest; ?></span>
+                              </a>
+                           </div> -->
+                           <!-- <div class=" header-action d-flex align-items-center ml-30">
+                              <div class="dropdown header-action-item">
+                                 <a class="dropdown-toggle header-action-btn" href="#" role="button" data-toggle="dropdown">
+                                    <i class="fa-solid fa-bell fa-lg"></i>
+                                    <span class="badge notification-active"></span>
+                                 </a>
+                                 <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="notification-list mx-h-350 customscroll">
+                                       <ul>
+                                          <li>
+                                             <a href="#">
+                                                <img src="vendors/images/img.jpg" alt="">
+                                                <h3>John Doe</h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div> -->
+                           <!-- <div class="header-action-item">
                               <a href="wishlist.php" class="header-action-btn">
                               <i class="fa-solid fa-heart fa-lg"></i>
                                  <span class="header-action-badge grocery-bg">3</span>
                               </a>
-                           </div>
+                           </div> -->
                            <div class="header-action-item">
                               <a href="cart.php" class="header-action-btn cartmini-open-btn">
                               <i class="fa-solid fa-cart-shopping fa-lg"></i>

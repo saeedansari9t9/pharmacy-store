@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
    });
 });
 
-//Product Searching
+//Product Searching navbar
 $(document).ready(function(){
     $("#live_search").keyup(function(){
         var input = $(this).val();
@@ -39,6 +39,27 @@ $(document).ready(function(){
             });
         } else {
             $("#search-result").css("display", "none");
+        }
+    });
+});
+
+//Product Searching sidebar
+$(document).ready(function(){
+    $("#live_search1").keyup(function(){
+        var input = $(this).val();
+
+        if(input != ""){
+            $.ajax({
+                url: "livesearch.php",
+                method: "POST",
+                data: {input: input},
+                success: function(data){
+                    $("#search-result1").html(data);
+                    $("#search-result1").css("display", "block"); // Make the result visible
+                }
+            });
+        } else {
+            $("#search-result1").css("display", "none");
         }
     });
 });

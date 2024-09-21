@@ -1,6 +1,10 @@
 <?php
 include("includes/header.php");
 
+if(!isset($_SESSION["AdminEmail"])) {
+    echo "<script>alert('Please Login First.....');
+	location.assign('login.php') </script>";
+}
 
 if(isset($_GET['edit_product'])){
     $product_id = $_GET["edit_product"];
@@ -24,10 +28,10 @@ if(isset($_GET['edit_product'])){
                         <form method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-6">
-                                <input type="hidden" name="id" value="<?php echo $product_data['product_id'] ?>">
+                                <input type="hidden" name="product_id" value="<?php echo $product_data['product_id'] ?>">
                                     <div class="mb-3">
                                         <label for="simpleinput" class="form-label">Product Name</label>
-                                        <input type="text" name="name" id="simpleinput" class="form-control" required value="<?php echo $product_data['name'] ?>">
+                                        <input type="text" name="name" id="simpleinput" class="form-control" required value="<?php echo $product_data['product_name'] ?>">
                                     </div>
 
                                     <div class="mb-3">
@@ -38,23 +42,27 @@ if(isset($_GET['edit_product'])){
                                     <div class="mb-3">
                                         <label for="example-select" class="form-label">Select Category</label>
                                         <select class="form-select" name="category_id" id="example-select" required>
-                                            <option selected>Select category</option>
+                                            <option disabled>Select category</option>
                                             <?php
                                             $query = $pdo->query("select * from category");
                                             $all_data = $query->fetchAll(PDO::FETCH_ASSOC);
                                             foreach ($all_data as $category_data) {
+                                                $selected = ($category_data['category_id'] == $product_data['category_id']) ? 'selected' : '';
                                                 ?>
-                                                <option value="<?php echo $category_data['category_id'] ?>"><?php echo $category_data['category_name'] ?></option>
+                                                <option value="<?php echo $category_data['category_id'] ?>" <?php echo $selected; ?>>
+                                                    <?php echo $category_data['category_name'] ?>
+                                                </option>
                                                 <?php
                                             }
                                             ?>
                                         </select>
                                     </div>
 
+
                                     <div class="mb-3">
                                         <label for="example-fileinput" class="form-label">Product Image</label>
-                                        <!-- <img  width="50px" name="image" id="example-fileinput" class="form-control" required> -->
-                                        <input src="assets/images/products-images/<?php echo $product_data['image'] ?>" type="file" name="image" id="example-fileinput" class="form-control" required>
+                                        <input type="file" name="image" id="example-fileinput" class="form-control" >
+                                        <img src="assets/images/products-images/<?php echo $product_data['image'] ?>" alt="">
                                     </div>
                                 </div> <!-- end col -->
 
@@ -71,19 +79,23 @@ if(isset($_GET['edit_product'])){
 
                                     <div class="mb-3">
                                         <label for="example-select" class="form-label">Select Company</label>
-                                        <select class="form-select" name="company_id" id="example-select">
-                                            <option selected>Select company</option>
+                                        <select class="form-select" name="company_id" id="example-select" required>
+                                            <option disabled>Select company</option>
                                             <?php
                                             $query = $pdo->query("select * from company");
                                             $all_data = $query->fetchAll(PDO::FETCH_ASSOC);
                                             foreach ($all_data as $company_data) {
+                                                $selected = ($company_data['company_id'] == $product_data['company_id']) ? 'selected' : '';
                                                 ?>
-                                                <option value="<?php echo $company_data['company_id'] ?>"><?php echo $company_data['company_name'] ?></option>
+                                                <option value="<?php echo $company_data['company_id'] ?>" <?php echo $selected; ?>>
+                                                    <?php echo $company_data['company_name'] ?>
+                                                </option>
                                                 <?php
                                             }
                                             ?>
                                         </select>
                                     </div>
+
                                 </div> <!-- end col -->
                             </div> <!-- end row -->
 

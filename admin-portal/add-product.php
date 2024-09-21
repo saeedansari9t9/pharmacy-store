@@ -1,5 +1,11 @@
 <?php
-include("includes/header.php")
+include("includes/header.php");
+
+if(!isset($_SESSION["AdminEmail"])) {
+    echo "<script>alert('Please Login First.....');
+	location.assign('login.php') </script>";
+}
+
 ?>
 
 <div class="container form-product">
@@ -28,7 +34,7 @@ include("includes/header.php")
                                     <div class="mb-3">
                                         <label for="example-select" class="form-label">Select Category</label>
                                         <select class="form-select" name="category_id" id="example-select" required>
-                                            <option selected>Select category</option>
+                                            <option selected disabled>Select category</option>
                                             <?php
                                             $query = $pdo->query("select * from category");
                                             $all_data = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -61,7 +67,7 @@ include("includes/header.php")
                                     <div class="mb-3">
                                         <label for="example-select" class="form-label">Select Company</label>
                                         <select class="form-select" name="company_id" id="example-select">
-                                            <option selected>Select company</option>
+                                            <option selected disabled>Select company</option>
                                             <?php
                                             $query = $pdo->query("select * from company");
                                             $all_data = $query->fetchAll(PDO::FETCH_ASSOC);

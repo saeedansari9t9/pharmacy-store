@@ -1,5 +1,11 @@
 <?php
 include("includes/header.php");
+
+if(!isset($_SESSION["AdminEmail"])) {
+    echo "<script>alert('Please Login First.....');
+	location.assign('login.php') </script>";
+}
+
 ?>
 
 <div class="container form-product">

@@ -40,13 +40,25 @@ if(isset($_POST["login"])){
         $_SESSION["UserName"] = $row["Name"];
         $_SESSION["UserUsername"] = $row["Username"];
         $_SESSION["UserEmail"] = $row["Email"];
-        $_SESSION["UserPassword"] = $row["password"];
-
+        $_SESSION["UserPassword"] = $row["Password"];
+        
         echo "<script>alert('logged in successfully.');
          location.assign('index.php') </script>";
         
     } else {
         echo "<script>alert('Invalid username or password.');</script>";
+    }
+}
+
+//Order placed message
+if (isset($_SESSION['order_message'])) {
+    echo '<div class="alert alert-success">' . $_SESSION['order_message'] . '</div>';
+    unset($_SESSION['order_message']);
+}
+
+if (isset($message) && !empty($message)) {
+    foreach ($message as $msg) {
+        echo '<div class="alert alert-success">' . $msg . '</div>';
     }
 }
 
@@ -105,4 +117,33 @@ $count = 0;
 if(isset($_SESSION['cart'])){
     $count = count($_SESSION['cart']);
 }
+
+
+//Notification Count
+try {
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Fetch count from the database
+    $query = "SELECT COUNT(*) as total
+            FROM `orders` 
+            WHERE `status` NOT IN ('Completed', 'Cancelled')";
+    $stmt = $pdo->query($query);
+
+    // Fetch count from the result set
+    $totalAppointmentsRequest = $stmt->fetchColumn();
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+
+
+
+
+
+
+
+
+
+
 ?>
+

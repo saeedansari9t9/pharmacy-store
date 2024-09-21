@@ -7,7 +7,7 @@ include("includes/header.php");
 
       <!-- Breadcrumb area start  -->
       <div class="breadcrumb__area theme-bg-1 p-relative z-index-11 pt-95 pb-95">
-         <div class="breadcrumb__thumb" data-background="assets/imgs/bg/breadcrumb-bg.jpg"></div>
+         <div class="breadcrumb__thumb" data-background="assets/imgs/about/about2.jpg"></div>
          <div class="container">
             <div class="row justify-content-center">
                <div class="col-xxl-12">
@@ -35,68 +35,44 @@ include("includes/header.php");
                <div class="col-xxl-6 col-xl-6 col-lg-6">
                   <div class="wow  fadeInRight animated" data-wow-delay="0.3s">
                      <div class="mb-20">
-                        <span class="mb-15" style="color: #B18B5E;">WE DESIGN FURNITURE</span>
-                        <h3>Our Core Divisions</h3>
+                        <span class="mb-15" style="color: #B18B5E;">ABOUT US</span>
+                        <h3>Your Trusted Online Pharmacy</h3>
                      </div>
-                     <p>Ut leo. Vivamus aliquet elit ac nisl. Aenean leo ligula, porttitor eu, consequat vitae, eleifend
-                        ac enim. Sed cursus
-                        turpis vitae tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                        cubilia Curae; Fusce id</p>
-                     <div class="bd-skill__progress mt-40 mb-60">
-                        <div class="bd-progress__skill-item fix">
-                           <h5>Furniture</h5>
-                           <div class="progress">
-                              <div class="progress-bar wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s"
-                                 role="progressbar" data-width="70%" aria-valuenow="25" aria-valuemin="0"
-                                 aria-valuemax="100"
-                                 style="width: 70%; visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: slideInLeft;">
-                              </div>
-                           </div>
-                           <span class="progress-count">70%</span>
-                        </div>
-                        <div class="bd-progress__skill-item fix">
-                           <h5>Handmade</h5>
-                           <div class="progress">
-                              <div class="progress-bar wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s"
-                                 role="progressbar" data-width="52%" aria-valuenow="25" aria-valuemin="0"
-                                 aria-valuemax="100"
-                                 style="width: 52%; visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: slideInLeft;">
-                              </div>
-                           </div>
-                           <span class="progress-count">52%</span>
-                        </div>
-                        <div class="bd-progress__skill-item fix">
-                           <h5>Crafts</h5>
-                           <div class="progress">
-                              <div class="progress-bar wow slideInLeft" data-wow-duration="1.5s" data-wow-delay=".3s"
-                                 role="progressbar" data-width="80%" aria-valuenow="25" aria-valuemin="0"
-                                 aria-valuemax="100"
-                                 style="width: 80%; visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: slideInLeft;">
-                              </div>
-                           </div>
-                           <span class="progress-count">80%</span>
-                        </div>
-                     </div>
-                     <img class="w-100" src="assets/imgs/furniture/about/about-image2.jpg" alt="">
+                     <p>
+                        At MEDILUXE, we are dedicated to providing you with a convenient and reliable way to order your medications online. Our mission is to make healthcare accessible and stress-free, ensuring that you receive the medicines and health products you need, right at your doorstep.
+                     </p>
+                     <h3>Who We Are</h3><br>
+                     <p>
+                        Founded with a commitment to excellence, our online pharmacy combines a deep understanding of healthcare with modern technology to bring you a seamless shopping experience. Whether you need prescription medications, over-the-counter drugs, or wellness products, we have a wide range of options to cater to your health needs.
+                     </p>
+                     <!-- <h5>Our Core Values</h5>
+                     <p>
+                        <ul>
+                           <li>Quality: We ensure that all products we offer are sourced from reputable manufacturers and are stored under optimal conditions to maintain their efficacy.</li>
+                           <li>Convenience: With our user-friendly platform, you can easily browse, order, and receive your medicines without leaving the comfort of your home.</li>
+                           <li>Customer Service: Our dedicated team of pharmacists and customer service representatives is here to assist you with any questions or concerns you may have.</li>
+                           <li>Privacy and Safety  :  We prioritize your privacy and ensure that all transactions and personal data are handled securely.
+                           </li>
+                        </ul>
+                     </p> -->
+                     <h3>Why Choose Us?</h3><br>
+                     <p>
+                        At Mediluxe, we believe in building trust and lasting relationships with our customers. We understand the importance of timely medication, which is why we offer fast delivery and easy refills. Our platform is designed to simplify your healthcare needs, allowing you to focus on what matters most—your health.
+                     </p>
+                     <h3>Our Vision</h3><br>
+                     <p>
+                        To be the leading online pharmacy that empowers individuals to take control of their health through easy access to quality medications and health products.
+                     </p>
                   </div>
                </div>
                <div class="col-xxl-6 col-xl-6 col-lg-6">
-                  <img class="w-100 pl-50" src="assets/imgs/furniture/about/about-image1.jpg" alt="">
+                  <img class="w-100 pl-50" src="assets/imgs/about/aboutus.jpg" alt="">
                </div>
             </div>
          </div>
       </section>
       <!-- About area end -->
 
-      <!-- About video area start -->
-      <div class="postbox__thumb postbox__video w-img p-relative">
-         <a href="blog-details.html">
-            <img src="assets/imgs/furniture/about/about-video-image.jpg" alt="image">
-         </a>
-         <a href="https://www.youtube.com/watch?v=YkfPITD2C8Y" class="play-btn pulse-btn popup-video"><i
-               class="fas fa-play"></i></a>
-      </div>
-      <!-- About video area end -->
 
       <!-- Support area start -->
       <section class="support-area section-space">
@@ -107,7 +83,7 @@ include("includes/header.php");
                      <div class="support-content">
                         <h3>Exclusive offers for you</h3>
                         <p>Get weekly deals, valuable health information and more.</p>
-                        <a class="join-btn furniture-btn" href="#">sing up<span><i
+                        <a class="join-btn furniture-btn" href="signup.php">sing up<span><i
                                  class="fa-regular fa-angle-right"></i></span></a>
                      </div>
                   </div>
@@ -117,7 +93,7 @@ include("includes/header.php");
                      <div class="support-content">
                         <h3>Join Our Community</h3>
                         <p>Get weekly deals, valuable health information and more.</p>
-                        <a class="join-btn furniture-btn" href="#">Join FREE now<span><i
+                        <a class="join-btn furniture-btn" href="signup.php">Join FREE now<span><i
                                  class="fa-regular fa-angle-right"></i></span></a>
                      </div>
                   </div>

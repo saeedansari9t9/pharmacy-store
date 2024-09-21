@@ -1,5 +1,11 @@
 <?php
-include("includes/header.php")
+include("includes/header.php");
+
+if(!isset($_SESSION["AdminEmail"])) {
+    echo "<script>alert('Please Login First.....');
+	location.assign('login.php') </script>";
+}
+
 ?>
 
 <div class="container form-product">
@@ -18,6 +24,10 @@ include("includes/header.php")
                                     <div class="mb-3">
                                         <label for="simpleinput" class="form-label">Category Name</label>
                                         <input type="text" name="name" id="simpleinput" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="simpleinput" class="form-label">Category Image</label>
+                                        <input type="file" name="image" id="simpleinput" class="form-control" required>
                                     </div>
 
                                     <button type="submit" name="add-category" class="btn btn-primary">Submit</button>

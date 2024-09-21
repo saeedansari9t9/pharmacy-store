@@ -128,8 +128,11 @@ include("includes/header.php");
                                 <div class="coupon2">
                                     <button onclick="window.location.reload()" class="fill-btn" type="submit">
                                         <span class="fill-btn-inner">
-                                            <span class="fill-btn-normal">Update cart</span>
-                                            <span class="fill-btn-hover">Update cart</span>
+                                            <a href="product.php">
+                                            <span class="fill-btn-normal">Continue Shopping</span>
+                                            <span class="fill-btn-hover">Continue Shopping</span>
+                                            </a>
+                                            
                                         </span>
                                     </button>
                                 </div>

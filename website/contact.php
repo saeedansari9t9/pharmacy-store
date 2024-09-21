@@ -7,7 +7,7 @@ include("includes/header.php");
 
       <!-- Breadcrumb area start  -->
       <div class="breadcrumb__area theme-bg-1 p-relative z-index-11 pt-95 pb-95">
-         <div class="breadcrumb__thumb" data-background="assets/imgs/bg/breadcrumb-bg.jpg"></div>
+         <div class="breadcrumb__thumb" data-background="assets/imgs/about/about2.jpg"></div>
          <div class="container">
             <div class="row justify-content-center">
                <div class="col-xxl-12">
@@ -50,8 +50,8 @@ include("includes/header.php");
                      </div>
                      <div class="contact-info-content">
                         <h4>Our Email Address</h4>
-                        <span><a href="mailto:contact@DOGRI.com">contact@DOGRI.com</a></span>
-                        <span><a href="mailto:support@DOGRI.com">support@DOGRI.com</a></span>
+                        <span><a href="mailto:contact@DOGRI.com">saeedansari3055@gmail.com</a></span>
+                        <span><a href="mailto:support@DOGRI.com">support@mediluxe.com</a></span>
                      </div>
                   </div>
                </div>
@@ -62,8 +62,8 @@ include("includes/header.php");
                      </div>
                      <div class="contact-info-content">
                         <h4>Contact Phone Number</h4>
-                        <span><a href="mailto:+380961381876">+380961381876</a></span>
-                        <span><a href="mailto:+380961381877">+380961381877</a></span>
+                        <span><a href="mailto:+92472310655">+92472310655</a></span>
+                        <span><a href="mailto:+923102204842">+923102204842</a></span>
                      </div>
                   </div>
                </div>
